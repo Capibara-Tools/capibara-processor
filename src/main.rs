@@ -181,6 +181,8 @@ fn discover_headers(filepath: &String, header_paths: Vec<String>) -> Vec<Header>
         }
     }
 
+    headers_to_return.sort_by_key(|k| k._ref.clone());
+
     headers_to_return
 }
 
@@ -273,6 +275,8 @@ fn discover_functions(filepath: &String, header_paths: Vec<String>) -> Vec<Funct
             }
         }
     }
+
+    functions_to_return.sort_by_key(|k| k.name.clone());
 
     functions_to_return
 }
