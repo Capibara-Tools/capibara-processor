@@ -26,9 +26,12 @@ pub(crate) struct Typedef {
 #[derive(Serialize, Deserialize, PartialEq)]
 pub(crate) enum TypedefRef {
     #[serde(rename = "none")]
-    None(()),
+    None(None),
     #[serde(rename = "enum")]
     Enumeration(Enumeration),
     #[serde(rename = "struct")]
     Struct(Struct),
 }
+
+#[derive(Serialize, Deserialize, PartialEq)]
+pub(crate) struct None {}

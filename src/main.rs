@@ -686,7 +686,8 @@ fn discover_typedefs(
 
                     match typedef_yaml_result {
                         Ok(yaml) => {
-                            let mut associated_ref = TypedefRef::None(());
+                            let mut associated_ref =
+                                TypedefRef::None(definitions::typedef::None {});
 
                             if &*yaml.associated_ref != "" {
                                 let re = Regex::new(r"(.+)/(.+)").unwrap();
@@ -705,7 +706,8 @@ fn discover_typedefs(
                                     }
                                 }
 
-                                if associated_ref == TypedefRef::None(()) {
+                                if associated_ref == TypedefRef::None(definitions::typedef::None {})
+                                {
                                     for _struct in structs.iter() {
                                         if &*_struct.name == definition_ref
                                             && &*_struct.header._ref == header_ref
@@ -717,7 +719,8 @@ fn discover_typedefs(
                                     }
                                 }
 
-                                if associated_ref == TypedefRef::None(()) {
+                                if associated_ref == TypedefRef::None(definitions::typedef::None {})
+                                {
                                     eprintln!(
                                         "Typedef associated_ref look up failed for: {}/{}",
                                         header_ref, definition_ref
