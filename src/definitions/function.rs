@@ -7,6 +7,7 @@ pub(crate) struct YamlFunction {
     pub returns: Return,
     pub parameters: Vec<Parameter>,
     pub description: Box<String>,
+    pub examples: Vec<Example>,
     pub associated: Vec<String>,
     pub os_affinity: Vec<String>,
 }
@@ -19,8 +20,15 @@ pub(crate) struct Function {
     pub returns: Return,
     pub parameters: Vec<Parameter>,
     pub description: Box<String>,
+    pub examples: Vec<Example>,
     pub associated: Vec<String>,
     pub os_affinity: Vec<String>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub(crate) struct Example {
+    pub title: Box<String>,
+    pub code: Box<String>,
 }
 
 #[derive(Serialize, Deserialize)]

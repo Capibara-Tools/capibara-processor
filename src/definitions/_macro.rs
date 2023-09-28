@@ -23,6 +23,13 @@ pub(crate) struct Macro {
 pub(crate) struct MacroFunction {
     pub returns: Return,
     pub parameters: Vec<TypelessParameter>,
+    pub examples: Vec<Example>
+}
+
+#[derive(Serialize, Deserialize)]
+pub(crate) struct Example {
+    pub title: Box<String>,
+    pub code: Box<String>,
 }
 
 #[derive(Serialize, Deserialize)]
