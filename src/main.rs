@@ -263,6 +263,7 @@ fn discover_functions(
                                 parameters: yaml.parameters,
                                 description: yaml.description,
                                 associated: yaml.associated,
+                                examples: yaml.examples,
                                 os_affinity: yaml.os_affinity.clone(),
                             };
 
